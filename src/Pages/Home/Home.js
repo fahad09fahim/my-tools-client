@@ -1,9 +1,14 @@
 import React from "react";
+import Footer from "../Shared/Footer";
+import Banner from "./Banner";
+import Tools from "./Tools";
 
 const Home = () => {
   return (
     <div>
-      <h1>this is home</h1>
+      <Banner />
+      <Tools />
+      <Footer />
     </div>
   );
 };
