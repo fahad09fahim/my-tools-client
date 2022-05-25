@@ -15,14 +15,13 @@ const BusinessSummary = () => {
       <h1 className="text-5xl text-secondary text-center pt-6 underline">
         Millions Business Trust Us
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 ml-80 mx-10 font-mono my-16">
+      <div className="grid grid-cols-2 lg:grid-cols-4  ml-5 lg:ml-80 mx-10 font-mono my-16">
         <div>
           <h3
             data-aos="fade-left"
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <MdPeople className=" mx-4 w-20 h-24" />
           </h3>
@@ -31,7 +30,6 @@ const BusinessSummary = () => {
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <p className="font-extrabold text-5xl">250+</p>
             <p>Customers</p>
@@ -43,7 +41,6 @@ const BusinessSummary = () => {
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <FaChartLine className=" mx-4 w-20 h-24" />
           </h3>
@@ -52,7 +49,6 @@ const BusinessSummary = () => {
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <p className="font-extrabold text-5xl">120M+ </p>
             <p>Annual revenue</p>
@@ -64,7 +60,6 @@ const BusinessSummary = () => {
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <MdReviews className=" mx-4 w-20 h-24" />
           </h3>
@@ -73,7 +68,6 @@ const BusinessSummary = () => {
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <p className="font-extrabold text-5xl">33K+</p>
             <p> Reviews</p>
@@ -85,7 +79,6 @@ const BusinessSummary = () => {
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <FaTools className=" mx-4 w-20 h-24" />
           </h3>
@@ -94,7 +87,6 @@ const BusinessSummary = () => {
             data-aos-delay="50"
             data-aos-duration="2000"
             data-aos-easing="ease-in-out"
-            data-aos-anchor-placement="top-center"
           >
             <p className="font-extrabold text-5xl">50+ </p>
             <p>tools</p>
