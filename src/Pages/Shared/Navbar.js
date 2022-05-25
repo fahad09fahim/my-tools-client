@@ -30,19 +30,8 @@ const Navbar = () => {
               <li>
                 <Link to="/tools">Tools</Link>
               </li>
-              <li tabIndex="0">
-                <a className="justify-between">
-                  Parent
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                  </svg>
-                </a>
+              <li>
+                <a>Reviews </a>
               </li>
               <li>
                 <a>Business Summary</a>
@@ -63,6 +52,9 @@ const Navbar = () => {
             </li>
             <li>
               <a>Business Summary</a>
+            </li>
+            <li>
+              <Link to="/chart">Business Progress</Link>
             </li>
             <li>
               <a> Reviews</a>
