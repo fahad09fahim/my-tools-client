@@ -42,26 +42,28 @@ const Chart = () => {
     },
   ];
   return (
-    <RadarChart outerRadius={90} width={1100} height={350} data={data}>
-      <PolarGrid />
-      <PolarAngleAxis dataKey="Name" />
-      <PolarRadiusAxis angle={30} domain={[0, 150]} />
-      <Radar
-        name="2021 total sells (piece)"
-        dataKey="A"
-        stroke="#8884d8"
-        fill="#8884d8"
-        fillOpacity={0.6}
-      />
-      <Radar
-        name="2022 total sells (piece)"
-        dataKey="B"
-        stroke="#82ca9d"
-        fill="#82ca9d"
-        fillOpacity={0.6}
-      />
-      <Legend />
-    </RadarChart>
+    <div className="flex !justify-center sm:overflow-hidden">
+      <RadarChart outerRadius={90} width={1100} height={350} data={data}>
+        <PolarGrid />
+        <PolarAngleAxis dataKey="Name" />
+        <PolarRadiusAxis angle={30} domain={[0, 150]} />
+        <Radar
+          name="2021 total sells (piece)"
+          dataKey="A"
+          stroke="#8884d8"
+          fill="#8884d8"
+          fillOpacity={0.6}
+        />
+        <Radar
+          name="2022 total sells (piece)"
+          dataKey="B"
+          stroke="#82ca9d"
+          fill="#82ca9d"
+          fillOpacity={0.6}
+        />
+        <Legend />
+      </RadarChart>
+    </div>
   );
 };
 
