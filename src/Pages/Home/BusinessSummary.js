@@ -6,9 +6,7 @@ import { FaChartLine, FaTools } from "react-icons/fa";
 
 const BusinessSummary = () => {
   useEffect(() => {
-    Aos.init({
-      duration: 4000,
-    });
+    Aos.init({});
   }, []);
   return (
     <div>
@@ -93,6 +91,13 @@ const BusinessSummary = () => {
           </div>
         </div>
       </div>
+      <hr
+        className="bg-secondary py-1 mx-6"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="2000"
+        data-aos-easing="ease-in-out"
+      />
     </div>
   );
 };
