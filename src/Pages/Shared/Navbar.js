@@ -39,7 +39,7 @@ const Navbar = () => {
                 <Link to="/tools">Tools</Link>
               </li>
               <li>
-                <a>Reviews </a>
+                <Link to="/review">Reviews </Link>
               </li>
               <li>
                 <Link to="/summary">Business Summary</Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
               <Link to="/chart">Sales progress</Link>
             </li>
             <li>
-              <a> Reviews</a>
+              <Link to="/review"> Reviews</Link>
             </li>
             <li>
               {user ? (
