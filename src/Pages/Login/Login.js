@@ -27,12 +27,16 @@ const Login = () => {
   let navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
-
+  let errorMessage;
   if (user || GUser) {
     navigate(from, { replace: true });
   }
   if (error || GError) {
-    console.log(error);
+    errorMessage = (
+      <p className="text-red-500">
+        <span>{error?.message}</span>
+      </p>
+    );
   }
   if (loading || GLoading) {
     return <Loading />;
@@ -127,6 +131,8 @@ const Login = () => {
               </button>
             </div>
           </form>
+          {errorMessage}
+
           <p className="text-center text-sm">
             New to My Tools? {""}
             <Link to="/signup" className="text-black w-19">

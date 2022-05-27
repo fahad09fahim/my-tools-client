@@ -1,12 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-const Tool = ({ tool }) => {
+const Tool = ({ tool, setSelectTools }) => {
   const { name, img, price, description, minOrder, available } = tool;
-  const navigate = useNavigate();
-  const goPurchase = () => {
-    return navigate("/purchase");
-  };
+
   return (
     <div>
       <div class="card card-side bg-info  shadow-xl w-1/2 mx-auto mb-5">
@@ -24,13 +20,15 @@ const Tool = ({ tool }) => {
             <p>Min order: {minOrder}</p>
             <p>Available:{available} </p>
             <p>price:{price}</p>
-            <button
+            <label
               disabled={available === 0}
               class="btn btn-primary w-28 "
-              onClick={goPurchase}
+              onClick={() => setSelectTools(tool)}
+              for="purchase-modal"
+              className="btn btn-primary w-28"
             >
               Book Now
-            </button>
+            </label>
           </div>
         </div>
       </div>

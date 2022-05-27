@@ -48,6 +48,9 @@ const Navbar = () => {
                 <Link to="/chart">Sales progress</Link>
               </li>
               <li>
+                <Link to="/portfolio">Portfolio</Link>
+              </li>
+              <li>
                 {user ? (
                   <button onClick={logOut} className="btn btn-ghost">
                     Sign Out
@@ -78,6 +81,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/review"> Reviews</Link>
+            </li>
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
             </li>
             <li>
               {user ? (
