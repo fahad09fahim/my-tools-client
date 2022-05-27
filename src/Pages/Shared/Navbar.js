@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="btn btn-ghost  normal-case text-2xl text-bold pl-10 "
+            className="btn btn-ghost  normal-case text-2xl text-bold pl-5 "
           >
             My Tools
           </Link>
@@ -85,6 +85,7 @@ const Navbar = () => {
             <li>
               <Link to="/portfolio">Portfolio</Link>
             </li>
+
             <li>
               {user ? (
                 <button onClick={logOut} className="btn btn-ghost">
