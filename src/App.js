@@ -19,6 +19,7 @@ import MyReview from "./Pages/Shared/MyReview";
 import MyOrder from "./Pages/Shared/MyOrder";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import User from "./Pages/Shared/User";
+import Payment from "./Pages/Shared/Payment";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         >
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
+          <Route path="payment/:id" element={<Payment />}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route
             path="users"

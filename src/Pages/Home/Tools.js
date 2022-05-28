@@ -27,7 +27,12 @@ const Tools = () => {
           <Tool key={tool._id} tool={tool} setSelectTools={setSelectTools} />
         ))}
       </div>
-      {selectTools && <Purchase selectTools={selectTools}></Purchase>}
+      {selectTools && (
+        <Purchase
+          setSelectTools={setSelectTools}
+          selectTools={selectTools}
+        ></Purchase>
+      )}
     </div>
   );
 };

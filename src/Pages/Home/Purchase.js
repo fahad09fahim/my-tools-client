@@ -1,10 +1,10 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
-const Purchase = ({ selectTools }) => {
+const Purchase = ({ selectTools, setSelectTools }) => {
   const { _id, name, price, minOrder, available } = selectTools;
+
   const [user] = useAuthState(auth);
 
   const handleOrder = (e) => {
@@ -17,6 +17,7 @@ const Purchase = ({ selectTools }) => {
       phone: e.target.phone.value,
       quantity: e.target.quantity.value,
       availableProduct: available - e.target.quantity.value,
+      price: price * e.target.quantity.value,
       address: e.target.address.value,
     };
     fetch("http://localhost:5000/order", {
@@ -28,7 +29,12 @@ const Purchase = ({ selectTools }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.success) {
+          alert("order placed");
+        } else {
+          alert("order cannot placed");
+        }
+        setSelectTools(null);
       });
   };
   return (

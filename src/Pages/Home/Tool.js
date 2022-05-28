@@ -19,7 +19,7 @@ const Tool = ({ tool, setSelectTools }) => {
             <p>{description}</p>
             <p>Min order: {minOrder}</p>
             <p>Available:{available} </p>
-            <p>price:{price}</p>
+            <p>price:${price}</p>
             <label
               disabled={available === 0}
               class="btn btn-primary w-28 "
