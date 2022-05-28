@@ -20,7 +20,7 @@ const Purchase = ({ selectTools, setSelectTools }) => {
       price: price * e.target.quantity.value,
       address: e.target.address.value,
     };
-    fetch("http://localhost:5000/order", {
+    fetch("https://morning-waters-40331.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,12 +39,12 @@ const Purchase = ({ selectTools, setSelectTools }) => {
   };
   return (
     <div>
-      <input type="checkbox" id="purchase-modal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="purchase-modal" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <div className="flex justify-between">
-            <h3 class="font-bold text-lg"> Make Your Order</h3>
-            <label for="purchase-modal" className="btn">
+            <h3 className="font-bold text-lg"> Make Your Order</h3>
+            <label htmlFor="purchase-modal" className="btn">
               X
             </label>
           </div>

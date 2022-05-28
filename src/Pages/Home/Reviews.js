@@ -5,7 +5,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://morning-waters-40331.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -17,7 +17,7 @@ const Reviews = () => {
         {reviews.map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}
-        <label for="addReview" class="btn modal-button">
+        <label htmlFor="addReview" className="btn modal-button">
           Add Review
         </label>
       </div>

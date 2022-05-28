@@ -10,7 +10,7 @@ const Tools = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    fetch("http://localhost:5000/tools")
+    fetch("https://morning-waters-40331.herokuapp.com/tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);

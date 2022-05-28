@@ -9,7 +9,9 @@ const MyOrder = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?user=${user.email}`)
+      fetch(
+        `https://morning-waters-40331.herokuapp.com/order?user=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }
@@ -17,8 +19,8 @@ const MyOrder = () => {
   return (
     <div>
       <h1>Total Order:{orders.length}</h1>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>

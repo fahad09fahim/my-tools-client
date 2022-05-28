@@ -16,7 +16,7 @@ const Review = ({ review }) => {
       img: user.photoURL,
       review: e.target.review.value,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://morning-waters-40331.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -46,12 +46,12 @@ const Review = ({ review }) => {
           </div>
         </div>
       </div>
-      <input type="checkbox" id="addReview" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="addReview" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <div className="flex justify-between">
-            <h3 class="font-bold text-lg">Add Your review</h3>
-            <label for="addReview" class="btn">
+            <h3 className="font-bold text-lg">Add Your review</h3>
+            <label htmlFor="addReview" className="btn">
               X
             </label>
           </div>

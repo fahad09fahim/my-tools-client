@@ -5,7 +5,7 @@ const Tool = ({ tool, setSelectTools }) => {
 
   return (
     <div>
-      <div class="card card-side bg-info  shadow-xl w-1/2 mx-auto mb-5">
+      <div className="card card-side bg-info  shadow-xl w-1/2 mx-auto mb-5">
         <div className="flex flex-col  md:flex-row  justify-between ">
           <div className=" w-3/4 ">
             <img
@@ -14,17 +14,17 @@ const Tool = ({ tool, setSelectTools }) => {
               alt="Movie"
             />
           </div>
-          <div class="card-body">
-            <h2 class="card-title">{name}</h2>
+          <div className="card-body">
+            <h2 className="card-title">{name}</h2>
             <p>{description}</p>
             <p>Min order: {minOrder}</p>
             <p>Available:{available} </p>
             <p>price:${price}</p>
             <label
               disabled={available === 0}
-              class="btn btn-primary w-28 "
+              className="btn btn-primary w-28 "
               onClick={() => setSelectTools(tool)}
-              for="purchase-modal"
+              htmlFor="purchase-modal"
               className="btn btn-primary w-28"
             >
               Book Now

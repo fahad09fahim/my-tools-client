@@ -3,7 +3,7 @@ import React from "react";
 const MyReview = () => {
   return (
     <div>
-      <label for="addReview" class="btn modal-button">
+      <label htmlFor="addReview" className="btn modal-button">
         Add Review
       </label>
     </div>

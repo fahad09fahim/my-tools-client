@@ -3,7 +3,7 @@ import React from "react";
 const UserRow = ({ user, refetch, index }) => {
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://morning-waters-40331.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -28,13 +28,13 @@ const UserRow = ({ user, refetch, index }) => {
       <td>{email}</td>
       <td>
         {role !== "admin" && (
-          <button onClick={makeAdmin} class="btn btn-xs">
+          <button onClick={makeAdmin} className="btn btn-xs">
             Make Admin
           </button>
         )}
       </td>
       <td>
-        <button class="btn btn-xs">Remove User</button>
+        <button className="btn btn-xs">Remove User</button>
       </td>
     </tr>
   );

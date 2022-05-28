@@ -38,9 +38,9 @@ const SignUp = () => {
   }
   return (
     <div className="flex justify-center  my-16  ">
-      <div class="card w-96 bg-secondary text-white shadow-xl">
-        <div class="card-body ">
-          <h2 class="text-center text-3xl ">Log in</h2>
+      <div className="card w-96 bg-secondary text-white shadow-xl">
+        <div className="card-body ">
+          <h2 className="text-center text-3xl ">Log in</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
@@ -66,9 +66,9 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
-                <span class="label-text text-xl">Email</span>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text text-xl">Email</span>
               </label>
               <input
                 {...register("email", {
@@ -83,9 +83,9 @@ const SignUp = () => {
                 })}
                 type="email"
                 placeholder="Your Email"
-                class="input input-bordered w-full max-w-xs text-black"
+                className="input input-bordered w-full max-w-xs text-black"
               />
-              <label class="label">
+              <label className="label">
                 {errors.email?.type === "required" && (
                   <span className="label-text-alt text-red-500">
                     {errors.email.message}
@@ -147,7 +147,7 @@ const SignUp = () => {
               Sign in
             </Link>
           </p>
-          <div class="divider">Or</div>
+          <div className="divider">Or</div>
           <h2 onClick={() => signInWithGoogle()} className="mx-auto">
             <FaGoogle className="h-12 w-10" />
           </h2>
