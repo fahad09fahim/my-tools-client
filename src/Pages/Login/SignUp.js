@@ -5,9 +5,12 @@ import {
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../Hook/useToken";
+import Loading from "../Shared/Loading";
 const SignUp = () => {
+  const navigate = useNavigate();
   const [signInWithGoogle, GUser, GLoading, GError] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -19,8 +22,12 @@ const SignUp = () => {
   const onSubmit = async (data) =>
     await createUserWithEmailAndPassword(data.email, data.password);
   let errorMessage;
-  if (user || GUser) {
-    console.log(user || GUser);
+  const [token] = useToken(user || GUser);
+  if (token) {
+    navigate("/");
+  }
+  if (loading || GLoading) {
+    return <Loading />;
   }
   if (error) {
     errorMessage = (

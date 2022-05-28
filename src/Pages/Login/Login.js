@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../Hook/useToken";
 import Loading from "../Shared/Loading";
 const Login = () => {
   const [signInWithGoogle, GUser, GLoading, GError] = useSignInWithGoogle(auth);
@@ -28,9 +29,12 @@ const Login = () => {
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
   let errorMessage;
-  if (user || GUser) {
-    navigate(from, { replace: true });
-  }
+  const [token] = useToken(user || GUser);
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
   if (error || GError) {
     errorMessage = (
       <p className="text-red-500">

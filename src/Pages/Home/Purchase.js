@@ -9,14 +9,15 @@ const Purchase = ({ selectTools }) => {
 
   const handleOrder = (e) => {
     e.preventDefault();
-    const totalQuantity = e.target.quantity.value;
     const order = {
       orderID: _id,
       productName: name,
       buyerName: user.displayName,
       buyerEmail: user.email,
       phone: e.target.phone.value,
-      quantity: available - totalQuantity,
+      quantity: e.target.quantity.value,
+      availableProduct: available - e.target.quantity.value,
+      address: e.target.address.value,
     };
     fetch("http://localhost:5000/order", {
       method: "POST",
@@ -27,11 +28,7 @@ const Purchase = ({ selectTools }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
-          alert("Order placed");
-        } else {
-          alert("Error");
-        }
+        console.log(data);
       });
   };
   return (
@@ -102,7 +99,7 @@ const Purchase = ({ selectTools }) => {
             />
             <input
               type="text"
-              name="Address"
+              name="address"
               placeholder="Address"
               className="input input-bordered w-full max-w-xs mt-7"
             />

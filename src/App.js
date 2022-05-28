@@ -13,6 +13,11 @@ import MyPortfolio from "./Pages/Home/MyPortfolio";
 import Navbar from "./Pages/Shared/Navbar";
 import NotFound from "./Pages/Shared/NotFound";
 import Blogs from "./Pages/Home/Blogs";
+import DashBoard from "./Pages/Shared/DashBoard";
+import MyProfile from "./Pages/Shared/MyProfile";
+import MyReview from "./Pages/Shared/MyReview";
+import MyOrder from "./Pages/Shared/MyOrder";
+import User from "./Pages/Shared/User";
 
 function App() {
   return (
@@ -34,6 +39,19 @@ function App() {
         <Route path="/review" element={<Reviews />} />
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <DashBoard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path="review" element={<MyReview></MyReview>}></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="users" element={<User></User>}></Route>
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
